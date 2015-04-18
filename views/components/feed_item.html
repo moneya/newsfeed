@@ -13,12 +13,15 @@ border-color: transparent;
 	<div class="clearfix">
             
 	    {if empty($item.line)}
-	        <div class="ow_newsfeed_avatar">
+	    <div class="avatar_bdr">
+	    	<div class="ow_newsfeed_avatar">
                     {*foreach from=$item.users item="user"}
                         {decorator name="avatar_item" url=$user.url src=$user.avatarUrl label=$user.roleLabel.label labelColor=$user.roleLabel.labelColor}
                     {/foreach*}
                     {decorator name="avatar_item" url=$item.user.url src=$item.user.avatarUrl label=$item.user.roleLabel.label labelColor=$item.user.roleLabel.labelColor}
 	        </div>
+	    </div>
+
 	    {else}
 	         <div class="ow_newsfeed_line ow_smallmargin ow_ic_info ow_icon_control">
 	            {if $item.context}<a href="{$item.context.url}">{$item.context.label}</a> &raquo; {/if}{$item.line}
